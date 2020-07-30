@@ -1,0 +1,42 @@
+/* <style>.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+</style> */
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500&display=swap');
+:root {
+    /* Colors  */
+    /* ------primary   */
+    --clr-soft-blue: hsl(231, 69%, 60%);
+    --clr-soft-red: hsl(0, 94%, 66%);
+    /* ------neutral   */
+    --clr-dark-blue: hsl(229, 31%, 21%);
+    --clr-grayish-blue: hsl(229, 8%, 60%);
+    Fonts --font-sm: 1.4rem;
+    --font-normal: 1.8rem;
+    --font-large: 2.4rem;
+    --font-xlarge: 3.2rem;
+}
+
+html {
+    font-size: 10px;
+}
+
+*,
+*:before,
+*:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: 'Rubik', sans-serif;
+}
