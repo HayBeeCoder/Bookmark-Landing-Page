@@ -18,8 +18,12 @@
     /* ------neutral   */
     --clr-dark-blue: hsl(229, 31%, 21%);
     --clr-grayish-blue: hsl(229, 8%, 60%);
-    Fonts --font-sm: 1.4rem;
-    --font-normal: 1.8rem;
+    --clr-very-grayish-blue: hsl(229, 8%, 90%);
+    /* hsl(229, 8%, 60%) */
+    /* Fonts */
+    --font-sm: 1.4rem;
+    --font-normal: 1.6rem;
+    --font-medium: 1.8rem;
     --font-large: 2.4rem;
     --font-xlarge: 3.2rem;
 }
@@ -37,6 +41,124 @@ html {
 }
 
 body {
-    font-size: 1.6rem;
+    font-size: var(--font-normal);
     font-family: 'Rubik', sans-serif;
+    color: var(--clr-dark-blue);
+    line-height: 1.5;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    width: 100%;
+    max-width: 100%;
+}
+
+.btn {
+    display: inline-block;
+    /* padding: 1.2em 2.4em; */
+    text-transform: capitalize;
+    outline: none;
+    border: 2px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+ul {
+    text-decoration: none;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: var(--font-xlarge);
+    line-height: 1.3;
+    margin: .8em 0;
+}
+
+
+/* Header  */
+
+.header {
+    padding: 2em 0;
+}
+
+.header__mobile {
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav__menu {
+    display: none;
+}
+
+
+/* Intro-Section  */
+
+.intro {
+    text-align: center;
+    padding: 2.5em 0 3em;
+}
+
+.intro__mockup-wrap {
+    width: 100%;
+}
+
+.intro__paragraph {
+    color: var(--clr-grayish-blue);
+}
+
+.intro__buttons {
+    display: flex;
+    max-width: 340px;
+    justify-content: space-around;
+    margin: 0 auto;
+    margin-top: 2em;
+}
+
+.intro__button {
+    font-size: var(--font-sm);
+    padding: 1em 1.5em;
+    white-space: nowrap;
+    font-weight: 500;
+}
+
+.intro__button_bg-blue {
+    background-color: var(--clr-soft-blue);
+    color: #fff;
+    transition: 0.25s ease;
+}
+
+.intro__button_bg-blue:hover,
+.intro__button_bg-blue:active,
+.intro__button_bg-blue:focus {
+    color: var(--clr-soft-blue);
+    border-color: var(--clr-soft-blue);
+    background-color: transparent;
+    transition: 0.25s ease;
+    /* outline: none; */
+}
+
+.intro__button_bg-gray {
+    background-color: var(--clr-very-grayish-blue);
+    color: var(--clr-dark-blue);
+    box-shadow: 0 5px 9px hsla(229, 8%, 90%, .2);
+    transition: 0.25s ease;
+}
+
+.intro__button_bg-gray:hover,
+.intro__button_bg-gray:active,
+.intro__button_bg-gray:focus {
+    background-color: transparent;
+    color: var(--clr-grayish-blue);
+    border-color: var(--clr-very-grayish-blue);
+    transition: 0.25s ease;
 }
