@@ -15,7 +15,8 @@
     --font-normal: 1.6rem;
     --font-medium: 1.8rem;
     --font-large: 2.4rem;
-    --font-xlarge: 2.8rem;
+    --font-xlarge: 3.2rem;
+    --font-xlarge-dsk: 3.5rem;
 }
 
 html {
@@ -36,6 +37,7 @@ body {
     color: var(--clr-dark-blue);
     line-height: 1.5;
     background-color: #fff;
+    /* overflow-x: hidden; */
 }
 
 a {
@@ -66,18 +68,26 @@ ul {
 .container {
     width: 90%;
     margin: 0 auto;
+    max-width: 1200px;
 }
 
 h1 {
     font-size: var(--font-xlarge);
     line-height: 1.3;
     margin: .8em 0;
+    font-weight: 500;
 }
 
 h2 {
     font-size: var(--font-large);
     margin: .8em 0;
     line-height: 1.2;
+    font-weight: 400;
+}
+
+h3 {
+    font-size: var(--font-large);
+    font-weight: 400;
 }
 
 
@@ -106,6 +116,8 @@ h2 {
 
 .intro__mockup-wrap {
     width: 100%;
+    /* max-width: 600px; */
+    margin: 0 auto;
 }
 
 .intro__paragraph {
@@ -241,10 +253,6 @@ h2 {
     text-align: center;
 }
 
-.extensions__heading {
-    white-space: nowrap;
-}
-
 .extensions__paragraph {
     color: var(--clr-grayish-blue);
     max-width: 600px;
@@ -274,10 +282,6 @@ h2 {
 .extension__paragraph {
     margin: .2em 0 1.2em;
     color: var(--clr-grayish-blue);
-}
-
-.extension__heading {
-    letter-spacing: 1px;
 }
 
 .extension__button {
@@ -451,4 +455,72 @@ h2 {
 .footer__social:active path {
     fill: var(--clr-soft-red);
     transition: .25s ease;
+}
+
+@media (min-width: 768px) {
+    /* Generals */
+    body {
+        font-size: var(--font-medium);
+        line-height: 1.7;
+    }
+    h1 {
+        font-size: var(--font-xlarge-dsk);
+        line-height: 1.2;
+        margin: .5em 0;
+    }
+    h2 {
+        font-size: var(--font-xlarge);
+        margin: .8em 0;
+        line-height: 1.2;
+    }
+    /* Introduction */
+    .intro__flex {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        flex: 1;
+    }
+    .intro__mockup-wrap {
+        padding: 0;
+        width: 45%;
+    }
+    .intro__texts {
+        width: 60%;
+    }
+    .intro__texts .container {
+        width: 95%;
+        margin: 0;
+        text-align: left;
+    }
+    .intro__heading {
+        margin-top: 0;
+    }
+    .intro__buttons {
+        display: inline-block;
+        margin-top: 1.2em;
+    }
+    .intro__button {
+        margin-right: 2.5px;
+    }
+}
+
+@media(min-width: 950px) {
+    .intro__flex {
+        align-items: flex-start;
+    }
+    .intro__texts {
+        width: 100%;
+    }
+    .intro__mockup-wrap {
+        width: 100%;
+    }
+}
+
+@media(min-width: 1100px) {
+    .intro__flex {
+        align-items: center;
+    }
+    .intro__texts .container {
+        width: 90%;
+    }
 }
