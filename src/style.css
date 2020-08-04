@@ -66,7 +66,7 @@ ul {
 }
 
 .container {
-    width: 90%;
+    width: 92%;
     margin: 0 auto;
     max-width: 1200px;
 }
@@ -120,6 +120,10 @@ h3 {
     margin: 0 auto;
 }
 
+.intro__heading {
+    /* white-space: nowrap; */
+}
+
 .intro__paragraph {
     color: var(--clr-grayish-blue);
 }
@@ -134,7 +138,7 @@ h3 {
 
 .intro__button {
     font-size: var(--font-sm);
-    padding: 1em 1.5em;
+    padding: 1em;
     white-space: nowrap;
     font-weight: 500;
 }
