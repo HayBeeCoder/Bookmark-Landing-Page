@@ -7,7 +7,7 @@ function openMenu() {
     mobile_menu.style.display = 'block';
     menu_open.style.display = 'none';
     header_logo.style.display = 'none'
-    body.style.overflow = 'hidden';
+    document.body.style.overflowY = 'hidden';
 }
 
 function closeMenu() {
