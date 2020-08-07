@@ -5,14 +5,14 @@ const header_logo = document.querySelector('.header__logo')
 
 function openMenu() {
     mobile_menu.style.display = 'block';
-    menu__open.style.display = 'none';
+    menu_open.style.display = 'none';
     header_logo.style.display = 'none'
     body.style.overflow = 'hidden';
 }
 
 function closeMenu() {
     mobile_menu.style.display = 'none';
-    menu__open.style.display = 'block';
+    menu_open.style.display = 'block';
     header_logo.style.display = 'block'
 }
 menu_open.addEventListener('click', openMenu)
