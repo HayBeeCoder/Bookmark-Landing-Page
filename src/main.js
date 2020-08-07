@@ -4,7 +4,7 @@ const mobile_menu = document.querySelector('.header-mobile')
 const header_logo = document.querySelector('.header__logo')
 
 function openMenu() {
-    mobile_menu.style.display = 'block';
+    mobile_menu.style.display = 'flex';
     menu_open.style.display = 'none';
     header_logo.style.display = 'none'
     document.body.style.overflowY = 'hidden';

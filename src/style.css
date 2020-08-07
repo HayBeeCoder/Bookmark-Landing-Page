@@ -108,7 +108,7 @@ h3 {
 }
 
 .header-mobile {
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: flex-start;
     flex: 1;
@@ -118,11 +118,9 @@ h3 {
     left: 0;
     width: 100vw;
     height: 100vh;
-    overflow-y: hidden;
     background-color: var(--clr-dark-blue);
     z-index: 9999;
     opacity: 0.98;
-    display: none;
     transition: 0.25s ease;
     overflow-y: hidden;
 }
