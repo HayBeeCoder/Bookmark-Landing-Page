@@ -198,12 +198,16 @@ h3 {
     fill: var(--clr-soft-red);
 }
 
-.nav
+
 /* Intro-Section  */
 
 .intro {
     text-align: center;
     padding: 4em 0;
+}
+
+.intro__heading {
+    text-align: center;
 }
 
 .intro__mockup-wrap {
@@ -424,17 +428,42 @@ h3 {
 }
 
 .faq__item {
-    padding: 1.4em 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    padding: 1.2em 0;
     border-bottom: 1px solid var(--clr-very-grayish-blue);
     cursor: pointer;
 }
 
-.faq__item:hover .faq,
-.faq__item:focus .faq {
+.faq-flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.faq__item:hover .faq {
     color: var(--clr-soft-red);
+}
+
+.faq__paragraph {
+    padding-top: 1.2em;
+    text-align: left;
+    color: var(--clr-grayish-blue);
+    line-height: 1.6;
+    display: none;
+    transition: 0.25s ease;
+}
+
+.faq__arrow_active {
+    transform: rotate(180deg);
+    transition: linear 0.3s;
+}
+
+.faq__arrow path {
+    transition: linear 0.3s;
+}
+
+.faq__arrow_active path {
+    stroke: var(--clr-soft-red);
+    transition: linear 0.3s;
 }
 
 
