@@ -125,6 +125,10 @@ h3 {
     overflow-y: hidden;
 }
 
+.navbar__logo_link {
+    display: inline-flex;
+}
+
 .nav__menu {
     padding-top: 2em;
     height: 100%;
@@ -302,6 +306,9 @@ h3 {
 .feature_status-active {
     box-shadow: inset 0 -3.5px 0 0 var(--clr-soft-red);
     color: var(--clr-dark-blue);
+    animation-name: fade-in;
+    animation-duration: 0.3s;
+    animation-timing-function: ease;
 }
 
 .feature__items {
@@ -345,6 +352,21 @@ h3 {
     color: var(--clr-soft-blue);
     border-color: var(--clr-soft-blue);
     transition: 0.25s ease;
+}
+
+@keyframes fade-in {
+    0% {
+        opacity: 0;
+        transform: scaleX(0);
+    }
+    50% {
+        opacity: 0.5;
+        transform: scaleX(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scaleX(1);
+    }
 }
 
 

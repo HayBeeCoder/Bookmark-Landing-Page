@@ -5,8 +5,33 @@ const header_logo = document.querySelector('.header__logo');
 const faq_buttons = document.getElementsByClassName('faq__arrow');
 const faq_paragraphs = document.getElementsByClassName('faq__paragraph');
 const arrow_svg = document.querySelector('path');
-const faqs = document.getElementsByClassName('faq')
+const faqs = document.getElementsByClassName('faq');
+const feature_image = document.querySelector('.feature__image');
+const feature_heading = document.querySelector('.feature__heading');
+const feature_paragraph = document.querySelector('.feature__paragraph');
+const feature_button = document.querySelector('.feature__btn');
+const features = document.getElementsByClassName('feature');
+const feature_contents = [{
+    image_url: 'images/illustration-features-tab-1.svg',
+    heading: 'Bookmark in one click',
+    paragraph: 'Organize your bookmarks however you like. Our simple drag-and-drop interface gives you complete control over how you manage your favourite sites.',
+    btn_link: '#'
 
+}, {
+    image_url: 'images/illustration-features-tab-2.svg',
+    heading: 'Intelligent search',
+    paragraph: 'Our powerful search feature will you find saved files in no time at all.No need to trawl through all your bookmarks.',
+    btn_link: '#'
+
+}, {
+    image_url: 'images/illustration-features-tab-3.svg',
+    heading: 'Share your bookmarks',
+    paragraph: 'Easily share your bookmarks and collections with other people.Create a sharable link that you can send at the click of  a button.',
+    btn_link: '#'
+
+}]
+
+//functionality for opening and closing menu
 function openMenu() {
     mobile_menu.style.display = 'flex';
     menu_open.style.display = 'none';
@@ -24,8 +49,7 @@ menu_open.addEventListener('click', openMenu)
 menu_close.addEventListener('click', closeMenu)
 
 
-
-
+//functionality for accordion
 for (let i = 0; i < faq_buttons.length; i++) {
     let faq_button = faq_buttons[i]
     faq_button.addEventListener('click', function() {
@@ -38,5 +62,24 @@ for (let i = 0; i < faq_buttons.length; i++) {
             faq.style.color = 'initial';
         } else { faq__paragraph.style.display = 'block' }
 
+    })
+}
+
+//functionality to switch features
+for (let i = 0; i < features.length; i++) {
+    features[i].addEventListener('click', () => {
+        for (let feature of features) {
+            feature.classList.remove('feature_status-active');
+        }
+
+        features[i].classList.add('feature_status-active');
+        feature_contents.forEach(f => {
+            if (feature_contents[i] == f) {
+                feature_heading.textContent = f.heading;
+                feature_paragraph.textContent = f.paragraph;
+                feature_image.setAttribute('src', f.image_url);
+                feature_button.setAttribute('href', f.btn_link)
+            }
+        })
     })
 }
