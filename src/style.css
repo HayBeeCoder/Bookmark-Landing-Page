@@ -525,7 +525,55 @@ h3 {
     font: inherit;
     font-size: inherit;
     outline: none;
+    width: 100%;
     background-color: #fff;
+}
+
+
+/* just added */
+
+.update__inputWrapper {}
+
+.update__inputWrapper_status-error {
+    background-color: var(--clr-soft-red);
+    border-radius: 5px;
+    padding: 2.5px 2.5px 0;
+}
+
+.update__inputLabel {
+    position: relative;
+}
+
+.update__icon_error {
+    display: none;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translate(-50%, -50%);
+}
+
+.update__error_status-active {
+    padding: .5em 1.2em;
+    display: block;
+}
+
+.update__error {
+    width: 100%;
+    text-align: left;
+    font-size: var(--font-sm);
+    letter-spacing: .8px;
+    color: white;
+    font-style: italic;
+    border-radius: 0 0 5px 5px;
+    box-sizing: border-box;
+}
+
+.update__input_status-invalid {
+    background-color: hsla(0, 94%, 90%);
+}
+
+input:focus.update__input_status-invalid {
+    outline: none;
 }
 
 .update__input::placeholder {
@@ -533,9 +581,11 @@ h3 {
 }
 
 .update__btn {
-    padding: .95em;
+    padding: 1em;
     margin-top: 1.4em;
-    font-size: var(--font-sm);
+    font-size: var(--font-normal);
+    font-weight: 500;
+    font-family: inherit;
 }
 
 .update__btn_bg-red {

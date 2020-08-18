@@ -243,8 +243,17 @@
                     Stay up-to-date with what we're doing
                 </h2>
                 <form action="#" class="update__form">
-                    <input type="email " name="user-email" id="email" class="update__input" placeholder="Enter your email address">
-                    <a href="# " class="btn update__btn update__btn_bg-red">contact us</a>
+                    <p class="update__inputWrapper ">
+
+                        <label for="email" class="update__inputLabel">
+                            <span >
+                                <svg class="update__icon_error " xmlns="http://www.w3.org/2000/svg" width="20" height="20"><g fill="none" fill-rule="evenodd"><circle cx="10" cy="10" r="10" fill="#FA5959"/><g fill="#FFF" transform="translate(9 5)"><rect width="2" height="7" rx="1"/><rect width="2" height="2" y="8" rx="1"/></g></g></svg>  
+                            </span>
+                        <input type="email " name="user-email" id="email" class="update__input " placeholder="Enter your email address" >
+                    </label>
+                        <span class="update__error"></span>
+                    </p>
+                    <button type="submit" href="# " class="btn update__btn update__btn_bg-red">contact us</button>
                 </form>
             </div>
             </div>
