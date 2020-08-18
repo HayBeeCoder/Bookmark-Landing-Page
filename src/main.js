@@ -96,13 +96,15 @@ const inputRegExp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z
 window.addEventListener('load', function() {
     const test = form__input.value.length === 0 || inputRegExp.test(form__input.value);
     form__input.className = test ? "update__input" : "update__input update__input_status-invalid";
-})
+});
+
+
 form__input.addEventListener('input', function() {
     const test = form__input.value.length === 0 || inputRegExp.test(form__input.value);
     if (test) {
         form__input.classList.remove('update__input_status-invalid');
         form__errorMessage.innerHTML = '';
-        form__errorMessage.classList.remove('update__error_status-active');
+        form__errorMessage.style.display = 'none';
         form__iconError.style.display = 'none';
         form__inputWrapper.classList.remove('update__inputWrapper_status-error');
 
@@ -111,17 +113,17 @@ form__input.addEventListener('input', function() {
     }
 })
 
+
 form.addEventListener('submit', function() {
     const test = form__input.value.length === 0 || inputRegExp.test(form__input.value);
     if (!test) {
-        form__input.classList.add('update__input_status-invalid');
-        form__errorMessage.innerHTML = `Whoops! make sure it's an email.`;
-        form__errorMessage.classList.add('update__error_status-active');
+        form__input.classList.remove('update__input_status-invalid');
+        form__errorMessage.innerHTML = `Whoosh! make sure it's an email.`;
+        form__errorMessage.style.display = 'block';
         form__iconError.style.display = 'block';
         form__inputWrapper.classList.add('update__inputWrapper_status-error');
         event.preventDefault();
     } else {
-        form__inputWrapper.classList.remove('update__inputWrapper_status-error ');
         form__input.classList.remove('update__input_status-invalid');
 
     }

@@ -552,12 +552,9 @@ h3 {
     transform: translate(-50%, -50%);
 }
 
-.update__error_status-active {
-    padding: .5em 1.2em;
-    display: block;
-}
-
 .update__error {
+    padding: .5em 1.2em;
+    display: none;
     width: 100%;
     text-align: left;
     font-size: var(--font-sm);
