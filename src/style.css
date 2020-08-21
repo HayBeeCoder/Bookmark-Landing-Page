@@ -466,12 +466,11 @@ h3 {
 }
 
 .faq__paragraph {
-    padding-top: 1.2em;
     text-align: left;
     color: var(--clr-grayish-blue);
     line-height: 1.6;
-    display: none;
-    transition: 0.5s ease;
+    max-height: 0;
+    overflow: hidden;
 }
 
 .faq__arrow_active {
@@ -528,11 +527,6 @@ h3 {
     width: 100%;
     background-color: #fff;
 }
-
-
-/* just added */
-
-.update__inputWrapper {}
 
 .update__inputWrapper_status-error {
     background-color: var(--clr-soft-red);
@@ -770,6 +764,7 @@ input:focus.update__input_status-invalid {
     }
     .intro__heading {
         margin-top: 0;
+        text-align: left;
     }
     .intro__buttons {
         display: inline-block;

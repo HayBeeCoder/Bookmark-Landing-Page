@@ -57,10 +57,14 @@ for (let i = 0; i < faq_buttons.length; i++) {
 
         let faq__paragraph = faq_paragraphs[i];
         let faq = faqs[i];
-        if (faq__paragraph.style.display == 'block') {
-            faq__paragraph.style.display = 'none';
+        if (faq__paragraph.style.maxHeight == 'fit-content') {
+            faq__paragraph.style.maxHeight = '0';
+            faq__paragraph.style.overflow = 'hidden'
             faq.style.color = 'initial';
-        } else { faq__paragraph.style.display = 'block' }
+        } else {
+            faq__paragraph.style.maxHeight = 'fit-content';
+            faq__paragraph.style.overflow = 'visible'
+        }
 
     })
 }
@@ -103,14 +107,15 @@ form__input.addEventListener('input', function() {
     const test = form__input.value.length === 0 || inputRegExp.test(form__input.value);
     if (test) {
         form__input.classList.remove('update__input_status-invalid');
-        form__errorMessage.innerHTML = '';
-        form__errorMessage.style.display = 'none';
-        form__iconError.style.display = 'none';
-        form__inputWrapper.classList.remove('update__inputWrapper_status-error');
 
     } else {
         form__input.classList.add('update__input_status-invalid');
     }
+    form__errorMessage.innerHTML = '';
+    form__errorMessage.style.display = 'none';
+    form__inputWrapper.classList.remove('update__inputWrapper_status-error');
+    form__iconError.style.display = 'none';
+
 })
 
 
@@ -118,7 +123,7 @@ form.addEventListener('submit', function() {
     const test = form__input.value.length === 0 || inputRegExp.test(form__input.value);
     if (!test) {
         form__input.classList.remove('update__input_status-invalid');
-        form__errorMessage.innerHTML = `Whoosh! make sure it's an email.`;
+        form__errorMessage.innerHTML = `Whoops! make sure it's an email.`;
         form__errorMessage.style.display = 'block';
         form__iconError.style.display = 'block';
         form__inputWrapper.classList.add('update__inputWrapper_status-error');
