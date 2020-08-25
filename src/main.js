@@ -1,3 +1,10 @@
+//functionality for Progress-Bar
+const progressBar = document.getElementById('progress')
+window.addEventListener('scroll', () => {
+    let max = document.body.scrollHeight - innerHeight;
+    progressBar.style.width = `${pageYOffset/max * 100}%`;
+})
+
 //functionality for opening and closing menu
 const menu_open = document.querySelector('.header__menu-open');
 const menu_close = document.querySelector('.header__menu-close');
@@ -40,13 +47,12 @@ for (let i = 0; i < faq_buttons.length; i++) {
 
         let faq__paragraph = faq_paragraphs[i];
         let faq = faqs[i];
-        if (faq__paragraph.style.maxHeight == 'fit-content') {
-            faq__paragraph.style.maxHeight = '0';
-            faq__paragraph.style.overflow = 'hidden'
+        if (faq__paragraph.style.display == 'block') {
+            faq__paragraph.style.display = 'none';
             faq.style.color = 'initial';
         } else {
-            faq__paragraph.style.maxHeight = 'fit-content';
-            faq__paragraph.style.overflow = 'visible'
+            faq__paragraph.style.display = 'block';
+
         }
 
     })
