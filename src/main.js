@@ -74,7 +74,7 @@ const feature_contents = [{
 }, {
     image_url: 'images/illustration-features-tab-2.svg',
     heading: 'Intelligent search',
-    paragraph: 'Our powerful search feature will you find saved files in no time at all.No need to trawl through all your bookmarks.',
+    paragraph: 'Our powerful search feature will find you saved files in no time at all.No need to trawl through all your bookmarks.',
     btn_link: '#'
 
 }, {
@@ -157,7 +157,9 @@ form.addEventListener('submit', function() {
 const all_buttons = document.querySelectorAll('.btn');
 
 all_buttons.forEach((element) => {
-    element.addEventListener("click", (event) => {
-        event.preventDefault();
-    });
+    if (element.nodeName != "BUTTON") {
+        element.addEventListener("click", (event) => {
+            event.preventDefault();
+        });
+    }
 });
