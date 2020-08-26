@@ -59,55 +59,27 @@ for (let i = 0; i < faq_buttons.length; i++) {
 }
 
 //functionality to switch features
-const feature_image = document.querySelector('.feature__image');
-const feature_heading = document.querySelector('.feature__heading');
-const feature_paragraph = document.querySelector('.feature__paragraph');
-const feature_button = document.querySelector('.feature__btn');
-const features = document.getElementsByClassName('feature');
-const feature__items__container = document.querySelector('.feature__items .container');
-const feature_contents = [{
-    image_url: 'images/illustration-features-tab-1.svg',
-    heading: 'Bookmark in one click',
-    paragraph: 'Organize your bookmarks however you like. Our simple drag-and-drop interface gives you complete control over how you manage your favourite sites.',
-    btn_link: '#'
-
-}, {
-    image_url: 'images/illustration-features-tab-2.svg',
-    heading: 'Intelligent search',
-    paragraph: 'Our powerful search feature will find you saved files in no time at all.No need to trawl through all your bookmarks.',
-    btn_link: '#'
-
-}, {
-    image_url: 'images/illustration-features-tab-3.svg',
-    heading: 'Share your bookmarks',
-    paragraph: 'Easily share your bookmarks and collections with other people.Create a sharable link that you can send at the click of  a button.',
-    btn_link: '#'
-
-}]
-
-for (let i = 0; i < features.length; i++) {
-
-    features[i].addEventListener('click', () => {
-        for (let feature of features) {
-            feature.classList.remove('feature_status-active');
-
-        }
-
-        features[i].classList.add('feature_status-active');
-        feature_contents.forEach(f => {
-            feature__items__container.classList.remove('feature__items_container');
-
-            if (feature_contents[i] == f) {
-                feature_heading.innerHTML = f.heading;
-                feature_paragraph.innerHTML = f.paragraph;
-                feature_image.setAttribute('src', f.image_url);
-                feature_button.setAttribute('href', f.btn_link);
-                feature__items__container.classList.add('feature__items_container');
-            }
-            feature__items__container.classList.remove('feature__items_container');
-        })
+function featuresTab(node) {
+    let tabs = Array.from(node.children).map((node, index) => {
+        let tabButtons = Array.from(document.querySelectorAll('.feature'));
+        let tabBtn = tabButtons[index];
+        let tab = { node, tabBtn };
+        tabBtn.addEventListener("click", () => selectTab(tab))
+        return tab;
     })
+
+    function selectTab(selectedTab) {
+        for (let tab of tabs) {
+            let selected = tab == selectedTab;
+            tab.node.style.animation = `tab 0.4s ease-in`;
+            tab.node.style.display = selected ? "" : "none";
+            tab.tabBtn.className = selected ? "feature feature_status-active" : "feature"
+        }
+    }
+    selectTab(tabs[0])
 }
+
+featuresTab(document.querySelector('.feature__items'))
 
 //Functionality for client-side validation.
 const form = document.querySelector('form');

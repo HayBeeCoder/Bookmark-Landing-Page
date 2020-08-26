@@ -21,6 +21,7 @@
      
      html {
          font-size: 10px;
+         overflow-x: hidden;
      }
      
      *,
@@ -37,6 +38,7 @@
          color: var(--clr-dark-blue);
          line-height: 1.5;
          background-color: #fff;
+         overflow-x: hidden;
      }
      
      a {
@@ -361,11 +363,28 @@
      }
      
      .feature__mockup {
-         padding: 3em 0em;
-         background: url(images/bg-blue-leftRect.svg);
+         padding: 2em 0em;
+         position: relative;
+         /* background: url(images/bg-blue-leftRect.svg);
          background-repeat: no-repeat;
          background-size: cover;
-         background-position: bottom 0% left 70%;
+         background-position: bottom 0% left 70%; */
+     }
+     
+     .feature__mockup_background {
+         position: absolute;
+         bottom: 0;
+         left: -5%;
+         z-index: -1;
+         width: 95%;
+         height: 350px;
+     }
+     
+     .feature__mockup_background img {
+         width: 100%;
+         max-width: 100%;
+         height: 100%;
+         object-fit: cover;
      }
      
      .feature__texts {
@@ -406,7 +425,7 @@
      @keyframes tab {
          from {
              opacity: 0;
-             transform: translate3d(-30px, 0, 0);
+             transform: translate3d(-50%, 0, 0);
          }
          to {
              opacity: 1;
@@ -714,7 +733,14 @@
          .feature {
              padding: 1em 2em;
          }
-         /* Header  */
+         .feature__mockup_background {
+             position: absolute;
+             bottom: 0;
+             left: -5%;
+             z-index: -1;
+             width: 95%;
+             height: 500px;
+         }
      }
      
      @media (min-width: 768px) {
@@ -851,6 +877,14 @@
          .feature__mockup .container {
              width: 100%;
          }
+         .feature__mockup_background {
+             position: absolute;
+             bottom: 0;
+             left: -60px;
+             z-index: -1;
+             width: 100%;
+             height: 400px;
+         }
          .feature__texts {
              text-align: left;
              width: 65%;
@@ -938,6 +972,14 @@
          }
          .intro__texts .container {
              width: 90%;
+         }
+         .feature__mockup_background {
+             position: absolute;
+             bottom: 0;
+             left: -180px;
+             z-index: -1;
+             width: 600px;
+             height: 520px;
          }
          .extensions__browsers {
              width: 75%;
