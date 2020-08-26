@@ -35,28 +35,61 @@ menu_close.addEventListener('click', closeMenu)
 
 
 //functionality for accordion
-const faq_buttons = document.getElementsByClassName('faq__arrow');
-const faq_paragraphs = document.getElementsByClassName('faq__paragraph');
-const arrow_svg = document.querySelector('path');
-const faqs = document.getElementsByClassName('faq');
+// const faq_buttons = document.getElementsByClassName('faq__arrow');
+// const faq_paragraphs = document.getElementsByClassName('faq__paragraph');
+// const arrow_svg = document.querySelector('path');
+// const faqs = document.getElementsByClassName('faq');
 
-for (let i = 0; i < faq_buttons.length; i++) {
-    let faq_button = faq_buttons[i]
-    faq_button.addEventListener('click', function() {
-        this.classList.toggle('faq__arrow_active');
+// for (let i = 0; i < faq_buttons.length; i++) {
+//     let faq_button = faq_buttons[i]
+//     faq_button.addEventListener('click', function() {
+//         this.classList.toggle('faq__arrow_active');
 
-        let faq__paragraph = faq_paragraphs[i];
-        let faq = faqs[i];
-        if (faq__paragraph.style.display == 'block') {
-            faq__paragraph.style.display = 'none';
-            faq.style.color = 'initial';
-        } else {
-            faq__paragraph.style.display = 'block';
+//         let faq__paragraph = faq_paragraphs[i];
+//         let faq = faqs[i];
+//         if (faq__paragraph.style.display == 'block') {
+//             faq__paragwraph.style.display = 'none';
+//             faq.style.color = 'initial';
+//         } else {
+//             faq__paragraph.style.display = 'block';
 
+//         }
+
+//     })
+// }
+
+function displayFaq(node) {
+    let faqs = Array.from(node).map((faq_paragraph, index) => {
+        let faq_arrows = Array.from(document.querySelectorAll('.faq__arrow'));
+        let faq_arrow = faq_arrows[index];
+        console.log(faq_arrow)
+        let faq = { faq_paragraph, faq_arrow };
+        console.log(faq);
+        faq_arrow.addEventListener("click", () => selectFaq(faq));
+        return faq;
+    });
+
+    function selectFaq(selectedFaq) {
+        for (let faq of faqs) {
+            let selected = faq == selectedFaq;
+            if (selected) {
+                if (faq.faq_paragraph.style.display == "block") {
+                    faq.faq_paragraph.style.display = "none";
+                    faq.faq_arrow.classList.remove("faq__arrow_status-active");
+                } else {
+                    faq.faq_paragraph.style.animation = `rollDown 0.3s linear`;
+                    faq.faq_paragraph.style.display = "block";
+                    faq.faq_arrow.classList.add("faq__arrow_status-active");
+                }
+            } else {
+                faq.faq_arrow.classList.remove("faq__arrow_status-active");
+                faq.faq_paragraph.style.display = "none";
+            }
         }
-
-    })
+    }
 }
+
+displayFaq(document.querySelectorAll('.faq__paragraph'))
 
 //functionality to switch features
 function featuresTab(node) {
@@ -73,7 +106,7 @@ function featuresTab(node) {
             let selected = tab == selectedTab;
             tab.node.style.animation = `tab 0.4s ease-in`;
             tab.node.style.display = selected ? "" : "none";
-            tab.tabBtn.className = selected ? "feature feature_status-active" : "feature"
+            tab.tabBtn.className = selected ? "feature feature_status-active" : "feature";
         }
     }
     selectTab(tabs[0])
