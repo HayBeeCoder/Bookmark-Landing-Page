@@ -22,7 +22,6 @@
     
     html {
         font-size: 10px;
-        overflow-x: hidden;
     }
     
     *,
@@ -31,6 +30,7 @@
         margin: 0;
         padding: 0;
         box-sizing: border-box;
+        -webkit-tap-highlight-color: transparent;
     }
     
     body {
@@ -39,7 +39,6 @@
         color: var(--clr-dark-blue);
         line-height: 1.5;
         background-color: #fff;
-        overflow-x: hidden;
     }
     
     a {
@@ -517,42 +516,6 @@
             transform: translate3d(0px, 0, 0);
         }
     }
-    /*     
-    @keyframes fade-in {
-        0% {
-            transform: scaleX(-1);
-        }
-        50% {
-            transform: scaleX(0.5);
-        }
-        100% {
-            transform-origin: left;
-        }
-    }
-    
-    @-o-keyframes fade-in {
-        0% {
-            transform-origin: left;
-        }
-        50% {
-            transform: scaleX(0.5);
-        }
-        100% {
-            transform: scaleX(1);
-        }
-    }
-    
-    @-moz-keyframes fade-in {
-        0% {
-            transform: scaleX(-1);
-        }
-        50% {
-            transform: scaleX(0.5);
-        }
-        100% {
-            transform: scaleX(1);
-        }
-    } */
     
     @keyframes fade-in {
         0% {

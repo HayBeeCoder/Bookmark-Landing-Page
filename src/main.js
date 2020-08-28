@@ -35,29 +35,6 @@ menu_close.addEventListener('click', closeMenu)
 
 
 //functionality for accordion
-// const faq_buttons = document.getElementsByClassName('faq__arrow');
-// const faq_paragraphs = document.getElementsByClassName('faq__paragraph');
-// const arrow_svg = document.querySelector('path');
-// const faqs = document.getElementsByClassName('faq');
-
-// for (let i = 0; i < faq_buttons.length; i++) {
-//     let faq_button = faq_buttons[i]
-//     faq_button.addEventListener('click', function() {
-//         this.classList.toggle('faq__arrow_active');
-
-//         let faq__paragraph = faq_paragraphs[i];
-//         let faq = faqs[i];
-//         if (faq__paragraph.style.display == 'block') {
-//             faq__paragwraph.style.display = 'none';
-//             faq.style.color = 'initial';
-//         } else {
-//             faq__paragraph.style.display = 'block';
-
-//         }
-
-//     })
-// }
-
 function displayFaq(node) {
     let faqs = Array.from(node).map((faq_paragraph, index) => {
         let faq_arrows = Array.from(document.querySelectorAll('.faq__arrow'));
@@ -111,7 +88,6 @@ function featuresTab(node) {
     }
     selectTab(tabs[0])
 }
-
 featuresTab(document.querySelector('.feature__items'))
 
 //Functionality for client-side validation.
@@ -160,7 +136,6 @@ form.addEventListener('submit', function() {
 
 // Remove default actions for buttons
 const all_buttons = document.querySelectorAll('.btn');
-
 all_buttons.forEach((element) => {
     if (element.nodeName != "BUTTON") {
         element.addEventListener("click", (event) => {
